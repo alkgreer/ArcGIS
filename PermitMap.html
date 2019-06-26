@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<!--
+PROGRAMMER:             Alisha Greer
+
+LAST EDIT:              10/01/18
+
+LAST EDIT DESCRIPTION:  Added Unfound Permit box and toggle that is hidden until unfound permits show.
+
+CODE RETRIEVED FROM:    https://developers.arcgis.com/javascript/latest/sample-code/view-hittest/index.html
+
+PROGRAM DESCRIPTION:    This javascript web app shows Permit info for inspections on mouse hover.
+                        Also features a legend and Address Search widget
+-->
+<html>
+
+<head>
+    <title>Permit</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <script src="https://js.arcgis.com/4.9"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="index.js"></script>
+    <link rel="icon" type="image/x-icon" href="https://greenecountymo.gov/files/files.php?id=54">
+    <link rel="stylesheet" href="https://js.arcgis.com/4.9/esri/css/main.css">
+    <style>
+        html,
+            body,
+            #mapview {
+                height: 100%;
+                width: 100%;
+                margin: 0;
+                padding: 0;
+            }
+        </style>
+</head>
+
+<body>
+
+    <div id="legend_toggle" style="background-color: aliceblue">
+        <input id="legend_check" type="checkbox" value="Show Legend" onclick="toggleLegend(this)" checked>Toggle Legend<br>
+    </div>
+    <div id="legend">
+        <img src="./assets/legend.PNG" alt="Legend">
+    </div>
+
+    <div hidden id="info" style="background-color: aliceblue; width: 500px">
+        <span id="date"></span>
+        <br>
+        <span id="permitNumber"></span>
+        <br>
+        <span id="permitType"></span>
+        <br>
+        <span id="apn"></span>
+        <br>
+        <span id="actionName"></span>
+        <br>
+        <span id="actionType"></span>
+        <br>
+        <span id="permitDesc"></span>
+        <br>
+        <span id="requestedBy"></span>
+        <br>
+        <span id="phone"></span>
+        <br>
+        <span id="approver"></span>
+        <br>
+        <span id="assigner"></span>
+        <br>
+        <span id="instructions"></span>
+        <br>
+        <span id="address"></span>
+    </div>
+    <div hidden id="address_toggle" style="background-color: aliceblue">
+        <input id="address_check" type="checkbox" value="Show Unfound Permits" onclick="toggleUnfoundPermits(this)" checked>Toggle Unfound Permits<br>
+    </div>
+    <div id="addressesNotFound" style="background-color: aliceblue">
+
+        <span id="unfoundAddress"></span>
+    </div>
+    <div id="mapview"></div>
+
+</body>
+
+</html>
