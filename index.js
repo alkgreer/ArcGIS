@@ -60,7 +60,7 @@ require(["esri/Map",
 
 
         var permitLayer = new MapImageLayer({
-            url: "https://gisarc.greenecountymo.gov:6443/arcgis/rest/services/Permits_Work2/MapServer",
+            url: "", // link to map data here
 
         });
 
